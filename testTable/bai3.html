@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bài 3</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var dem = 1;
+			dem++;
+			$(".add-row").click(function(){
+				var markup = "<tr><td>"+ dem++ +"</td>" + "<td><input type='text'></td>"+"<td><select><option>---</option>"+"<option>Kg</option>"+"<option> Cái</option>"+"<option> Con</option>"+"</select>" +"</td>" + "<td><input type='text'></td>" + "<td><input type='button' class='delete-row' value='Xóa'></td>" + "</tr>";
+				$("table tbody").append(markup);
+			});
+
+			$(".delete-row").click(function(){
+				$(this).parents("tr").remove();
+			});
+		});    
+	</script>
+</head>
+<body>
+	<table border="1" id="myTable">
+		<thead>
+			<tr>
+				<td>No.</td>
+				<td>Tên sản phẩm</td>
+				<td> Đơn vị </td>
+				<td> Giá</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>
+					<input type="text" name="">
+				</td>
+				<td>
+					<select>
+						<option>---</option>
+						<option>Kg</option>
+						<option> Cái</option>
+						<option> Con</option>
+					</select>
+				</td>
+				<td>
+					<input type="text" name="">
+				</td>
+				<td><input type="button" value="Xóa" class="delete-row" onclick="deleteRow();"></td>
+			</tr>
+			
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5">
+					<input type="button" value="Thêm hàng" class="add-row">
+				</td>
+			</tr>
+		</tfoot>
+		
+	</table>
+</body>
+</html>
